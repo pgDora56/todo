@@ -31,14 +31,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: downcase repository_name 
-        run: |
-          echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.REPO }}:latest
-            ghcr.io/${{ github.REPO }}:1.0.0
+            ghcr.io/pgdora56/todo:latest
+            ghcr.io/pgdora56/todo:1.0.0
