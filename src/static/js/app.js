@@ -51,6 +51,7 @@ function TodoListCard() {
 
     return (
         <React.Fragment>
+            <h1>ToDo App by Kazuki Fukushima</h1>
             <AddItemForm onNewItem={onNewItem} />
             {items.length === 0 && (
                 <p className="text-center">No items yet! Add one above!</p>
@@ -153,9 +154,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     >
                         <i
                             onClick={toggleCompletion}
-                            className={`far ${
-                                item.completed ? 'fa-check-square' : 'fa-square'
-                            }`}
+                            className={`far ${item.completed ? 'fa-check-square' : 'fa-square'
+                                }`}
                         />
                     </Button>
                 </Col>
